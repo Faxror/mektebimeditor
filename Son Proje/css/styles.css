@@ -1,0 +1,301 @@
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  touch-action: none; /* Mobil cihazlarda zoom'u devre dışı bırakma */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  overflow: scroll;
+}
+
+h2 {
+  color: #3498db;
+}
+
+/* Popup styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.popup h2 {
+  color: #3498db;
+}
+
+.popup p {
+  margin-bottom: 20px;
+}
+
+.popup button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #217dbb;
+}
+
+/* Sorular */
+/* Sorular */
+
+.question.active {
+  display: block;
+  
+}
+
+.questions-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.question {
+	border-radius: 2%;
+  display: none;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  background-color: white;
+  padding: 3%;
+  margin: 5%;
+  margin-right: 60%;
+  width: 65%; /* Adjusted width to 700px */
+  position: relative;
+  max-width: 700px;
+  height: 30%;
+		max-height: 800; 
+}
+
+#progress-text {
+  position: absolute  ;
+  margin-bottom: -69%;
+  right: 40%;
+}
+
+/* Center horizontally */
+
+/* Code Editor */
+#code-editor {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  resize: none;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  color: #333;
+  transition: border-color 0.3s ease;
+  position: absolute;
+  width: 70%;
+  max-width: 900px;
+  padding: 5%;
+  font-size: 100%;
+  left: 5%;
+  bottom: 5%;
+}
+
+#code-editor:focus {
+  outline: none;
+  border-color: #f8f8f8;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+/* Output */
+#output {
+  background-color: black;
+  color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  width: 90%;
+  height: 85%;
+  max-width: 900px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+/* Button */
+#next-button,
+#prev-button {
+  padding: 1% 1%;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+}
+
+#prev-button {
+  top: 36%;
+  left: 23%;
+}
+
+#next-button {
+  top: 36%;
+  left: 16%;
+}
+
+/* Responsive Alanı */
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .questions-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .question {
+    width: 90%;
+    margin-right: 0;
+    max-width: none;
+  }
+
+  .progress-text {
+    position: relative;
+    margin-bottom: 0;
+    left: 200px;
+  }
+
+  #code-editor,
+  #output {
+    width: 90%;
+    max-width: none;
+    left: 5%;
+  }
+
+  #output {
+    top: 37%;
+    height: 150px;
+  }
+
+  #prev-button {
+    top: -54%;
+    left: 30%;
+  }
+
+  #next-button {
+    top: 20%;
+    left: 65%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
+
+  .questions-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .question {
+    width: 90%;
+    margin-right: 0;
+    max-width: none;
+    right: 25px;
+  }
+
+  .progress-text {
+    position: relative;
+    margin-bottom: 0;
+    left: 350px;
+  }
+
+  #code-editor,
+  #output {
+    width: 90%;
+    max-width: none;
+    left: 5%;
+  }
+
+  #output {
+    top: 37%;
+    height: 150px;
+  }
+
+  #prev-button {
+    position: absolute;
+    top: 27%;
+    left: 30%;
+  }
+
+  #next-button {
+    position: absolute;
+    top: 27%;
+    left: 65%;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .questions-container,
+  .question,
+  .progress-text,
+  #code-editor,
+  #output,
+  #prev-button,
+  #next-button {
+    /* Adjusted styles for this range */
+    /* ... */
+  }
+}
+
+@media screen and (max-width: 1201px) {
+  .questions-container,
+  .question,
+  .progress-text,
+  #code-editor,
+  #output,
+  #prev-button,
+  #next-button {
+    /* Adjusted styles for this range */
+    /* ... */
+  }
+}
+
+@media only screen and (min-width: 1274px) and (max-width: 2215px) {
+
+	#progress-text{
+	top: 42%;
+		left:20%;
+	}
+  #prev-button,
+  #next-button {
+     top: 40%;
+  }
+	#code-editor{
+	height: 350px;
+	
+	}
+  #output {
+    top: 10%;
+    height: 780px;
+	 left:56%;
+	   width: 43%;
+  
+  }
+}
